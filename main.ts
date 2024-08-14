@@ -1,4 +1,4 @@
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprites.destroy(mySprite)
 })
 let projectile: Sprite = null
@@ -22,8 +22,8 @@ mySprite = sprites.create(img`
     . . . . . . 1 1 1 . . . 1 1 1 . 
     `, SpriteKind.Player)
 mySprite.x = 10
-controller.moveSprite(mySprite)
-game.onUpdateInterval(500, function () {
+controller.moveSprite(mySprite, 0, 100)
+game.onUpdateInterval(2000, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
