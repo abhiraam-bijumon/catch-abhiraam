@@ -1,3 +1,4 @@
+let projectile: Sprite = null
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -18,3 +19,23 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.x = 10
 controller.moveSprite(mySprite)
+game.onUpdateInterval(500, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . 3 3 3 3 3 3 3 3 . . . . 
+        . . . 3 3 3 3 3 3 3 3 3 3 . . . 
+        . . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+        . . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+        . . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+        . . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+        . . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+        . . . 3 3 3 3 3 3 3 3 3 3 . . . 
+        . . . 3 3 3 3 3 3 3 3 3 3 . . . 
+        . . . . 3 3 3 3 3 3 3 . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, 50, 50)
+})
