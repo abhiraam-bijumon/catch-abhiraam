@@ -38,5 +38,5 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, mySprite, 50, 50)
-    projectile.setBounceOnWall(true)
+    mySprite.setBounceOnWall(true)
 })
