@@ -39,4 +39,5 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . . 
         `, mySprite, 50, 50)
     mySprite.setBounceOnWall(true)
+    projectile.y = randint(0, 120)
 })
