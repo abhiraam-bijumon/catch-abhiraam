@@ -1,9 +1,12 @@
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Projectile, function (sprite, otherSprite) {
-    sprites.destroy(mySprite)
+namespace SpriteKind {
+    export const Wall = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
 })
 let projectile: Sprite = null
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
+info.setLife(3)
+let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -22,8 +25,131 @@ mySprite = sprites.create(img`
     . . . . . . 1 1 1 . . . 1 1 1 . 
     `, SpriteKind.Player)
 mySprite.x = 10
-controller.moveSprite(mySprite, 0, 100)
-game.onUpdateInterval(2000, function () {
+controller.moveSprite(mySprite)
+let mySprite2 = sprites.create(img`
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    . 
+    `, SpriteKind.Wall)
+mySprite.x = 0
+game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
