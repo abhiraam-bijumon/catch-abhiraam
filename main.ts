@@ -1,5 +1,9 @@
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    sprites.destroy(mySprite)
+})
 let projectile: Sprite = null
-let mySprite = sprites.create(img`
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -37,7 +41,7 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, mySprite, 50, 50)
-    mySprite.setBounceOnWall(true)
+        `, mySprite, -50, 90)
+    projectile.setBounceOnWall(true)
     projectile.y = randint(0, 120)
 })
