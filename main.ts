@@ -3,9 +3,10 @@ namespace SpriteKind {
 }
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
+    info.changeLifeBy(-1)
 })
 let projectile: Sprite = null
-info.setLife(3)
+info.setLife(1)
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
